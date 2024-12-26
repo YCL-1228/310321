@@ -17,6 +17,7 @@
         <ul>
             <li><a href="#home" id="home-link">首頁</a></li>
             <li><a href="#about" id="about-link">關於埔里</a></li>
+            <li><a href="#attractions" id="attractions-link">十大景點</a></li>
         </ul>
     </nav>
 
@@ -39,6 +40,7 @@
 
         const homeLink = document.getElementById('home-link');
         const aboutLink = document.getElementById('about-link');
+        const attractionsLink = document.getElementById('attractions-link');
         const contentArea = document.getElementById('content-area');
 
 
@@ -63,7 +65,16 @@
                 <p>埔里擁有豐富的族群歷史及自然資源，是旅遊、文化愛好者的天堂。每年吸引大量遊客來此欣賞美麗的風光、品味當地美食。</p>
             `;
         });
-        
+
+
+
+        attractionsLink.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            contentArea.innerHTML = `
+
+                 <h2>十大景點</h2>
+                 <h3>1.日月町複合式廣場</h3>
+                 
     </script>
 
 </body>
