@@ -36,12 +36,11 @@
     </footer>
 
     <script>
-
-        const homeLink = document.getElementById('home-link');
+       const homeLink = document.getElementById('home-link');
         const aboutLink = document.getElementById('about-link');
         const attractionsLink = document.getElementById('attractions-link');
         const contentArea = document.getElementById('content-area');
-
+        
         homeLink.addEventListener('click', function(event) {
             event.preventDefault(); 
             contentArea.innerHTML = `
@@ -67,7 +66,8 @@
             event.preventDefault(); 
             attractionsLink.textContent = '十大景點';
             contentArea.innerHTML = `
-          <h2>十大景點</h2>
+        <h2>十大景點推薦</h2>
+        <h3> 1.日月町 </h3>
           <p>日月町位於南投縣埔里鎮，地處群山環抱之中，是一處融合自然風光與人文氣息的小鎮。
           這裡以清新的空氣、壯麗的山景及寧靜的生活步調吸引旅人駐足。
           日月町鄰近著名的日月潭，為探索埔里與周邊風景的理想起點，亦是品味當地美食與感受台灣小鎮文化的絕佳去處。</p>
