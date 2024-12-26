@@ -15,22 +15,18 @@
 
     <nav>
         <ul>
-            <li><a href="#home" id="home-link">首頁</a></li>
-            <li><a href="#about" id="about-link">關於埔里</a></li>
-            <li><a href="#attractions" id="attractions-link">十大景點</a></li>
-            <li><a href="#contact">聯絡我們</a></li>
+            <li><a href="#home" class="nav-link" data-target="home">首頁</a></li>
+            <li><a href="#about" class="nav-link" data-target="about">關於埔里</a></li>
+            <li><a href="#attractions" class="nav-link" data-target="attractions">十大景點</a></li>
         </ul>
     </nav>
 
     <main>
-   
-        <div id="content-area">
-           
+        <section id="content-area">
             <h2>歡迎來到埔里小鎮</h2>
             <p>埔里小鎮是臺灣的地理中心，四面環山，擁有豐富的自然景觀和深厚的歷史文化。</p>
             <img src="310321/圖/下載.jfif" alt="埔里鳥瞰圖" class="main-image">
-        </div>
-        
+        </section>
     </main>
 
     <footer>
@@ -38,44 +34,39 @@
     </footer>
 
     <script>
+   
+        document.addEventListener("DOMContentLoaded", () => {
+            const contentArea = document.getElementById('content-area');
 
-        const homeLink = document.getElementById('home-link');
-        const aboutLink = document.getElementById('about-link');
-        const attractionsLink = document.getElementById('attractions-link');
-        const contentArea = document.getElementById('content-area');
-
-
-        homeLink.addEventListener('click', function(event) {
-            event.preventDefault(); 
-            contentArea.innerHTML = `
-            
-                <h2>歡迎來到埔里小鎮</h2>
-                <p>埔里小鎮是臺灣的地理中心，四面環山，擁有豐富的自然景觀和深厚的歷史文化。</p>
-                <img src="310321/圖/下載.jfif" alt="埔里鳥瞰圖" class="main-image">
-            `;
-        });
-
-     
-        aboutLink.addEventListener('click', function(event) {
-            event.preventDefault();
-            contentArea.innerHTML = `
-            
-                <h2>關於埔里</h2>
-                <p>位於南投縣境北部的埔里，是臺灣的地理中心鎮，以甘泉、美酒、鮮花、佳人聞名，四面環山，是個典型的盆地小鎮，素有「山城」的美稱。</p>
-                <p>埔里全鎮面積162.227平方公里，海拔在380-700公尺之間，氣候屬於亞熱帶溫潤氣候。</p>
-                <p>埔里擁有豐富的族群歷史及自然資源，是旅遊、文化愛好者的天堂。每年吸引大量遊客來此欣賞美麗的風光、品味當地美食。</p>
-            `;
-        });
-
-
-
-        attractionsLink.addEventListener('click', function(event) {
-            event.preventDefault(); 
-            contentArea.innerHTML = `
+         
+            const contentData = {
+                home: `
+                    <h2>歡迎來到埔里小鎮</h2>
+                    <p>埔里小鎮是臺灣的地理中心，四面環山，擁有豐富的自然景觀和深厚的歷史文化。</p>
+                    <img src="310321/圖/下載.jfif" alt="埔里鳥瞰圖" class="main-image">
+                `,
+                about: `
+                    <h2>關於埔里</h2>
+                    <p>位於南投縣境北部的埔里，是臺灣的地理中心鎮，以甘泉、美酒、鮮花、佳人聞名，四面環山，是個典型的盆地小鎮，素有「山城」的美稱。</p>
+                    <p>埔里擁有豐富的族群歷史及自然資源，是旅遊、文化愛好者的天堂。每年吸引大量遊客來此欣賞美麗的風光、品味當地美食。</p>
+                `,
+                attractions: `
 
                  <h2>十大景點</h2>
                  <h3>1.日月町複合式廣場</h3>
-                 
+
+        
+             document.querySelector('nav').addEventListener('click', (event) => {
+                if (event.target.classList.contains('nav-link')) {
+                    event.preventDefault(); 
+
+                    const target = event.target.dataset.target;
+                    if (contentData[target]) {
+                        contentArea.innerHTML = contentData[target]; 
+                    }
+                }
+            });
+        });      
     </script>
 
 </body>
