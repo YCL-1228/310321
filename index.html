@@ -17,7 +17,6 @@
         <ul>
             <li><a href="#home" id="home-link">首頁</a></li>
             <li><a href="#about" id="about-link">關於埔里</a></li>
-            <li><a href="#contact">聯絡我們</a></li>
         </ul>
     </nav>
 
@@ -29,6 +28,7 @@
             <p>埔里小鎮是臺灣的地理中心，四面環山，擁有豐富的自然景觀和深厚的歷史文化。</p>
             <img src="310321/圖/下載.jfif" alt="埔里鳥瞰圖" class="main-image">
         </div>
+        
     </main>
 
     <footer>
@@ -45,6 +45,7 @@
         homeLink.addEventListener('click', function(event) {
             event.preventDefault(); 
             contentArea.innerHTML = `
+            
                 <h2>歡迎來到埔里小鎮</h2>
                 <p>埔里小鎮是臺灣的地理中心，四面環山，擁有豐富的自然景觀和深厚的歷史文化。</p>
                 <img src="310321/圖/下載.jfif" alt="埔里鳥瞰圖" class="main-image">
@@ -55,6 +56,7 @@
         aboutLink.addEventListener('click', function(event) {
             event.preventDefault();
             contentArea.innerHTML = `
+            
                 <h2>關於埔里</h2>
                 <p>位於南投縣境北部的埔里，是臺灣的地理中心鎮，以甘泉、美酒、鮮花、佳人聞名，四面環山，是個典型的盆地小鎮，素有「山城」的美稱。</p>
                 <p>埔里全鎮面積162.227平方公里，海拔在380-700公尺之間，氣候屬於亞熱帶溫潤氣候。</p>
