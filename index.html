@@ -39,7 +39,8 @@
 
         const homeLink = document.getElementById('home-link');
         const aboutLink = document.getElementById('about-link');
-        const Attractions = document.getElementById('Attractions-link');
+        const attractionsLink = document.getElementById('attractions-link');
+        const contentArea = document.getElementById('content-area');
 
         homeLink.addEventListener('click', function(event) {
             event.preventDefault(); 
@@ -62,8 +63,9 @@
             埔里擁有豐富的族群歷史及自然資源，是旅遊、文化愛好者的天堂。每年吸引大量遊客來此欣賞美麗的風光、品味當地美食。</p>
             `;
         });
-        AttractionsLink.addEventListener('click', function(event) {
+        attractionsLink.addEventListener('click', function(event) {
             event.preventDefault(); 
+            attractionsLink.textContent = '十大景點';
             contentArea.innerHTML = `
           <h2>十大景點</h2>
           <p>日月町位於南投縣埔里鎮，地處群山環抱之中，是一處融合自然風光與人文氣息的小鎮。
