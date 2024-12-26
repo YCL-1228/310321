@@ -34,6 +34,7 @@
     </footer>
 
     <script>
+         document.addEventListener("DOMContentLoaded", () => {
         const homeLink = document.getElementById('home-link');
         const aboutLink = document.getElementById('about-link');
         const attractionsLink = document.getElementById('attractions-link');
@@ -41,6 +42,7 @@
 
         homeLink.addEventListener('click', function(event) {
             event.preventDefault();
+            console.log("首頁按鈕點擊");
             contentArea.innerHTML = `
                 <h2>歡迎來到埔里小鎮</h2>
                 <p>埔里小鎮是臺灣的地理中心，四面環山，擁有豐富的自然景觀和深厚的歷史文化。</p>
@@ -50,6 +52,7 @@
 
         aboutLink.addEventListener('click', function(event) {
             event.preventDefault();
+            console.log("關於埔里按鈕點擊");
             contentArea.innerHTML = `
                 <h2>關於埔里</h2>
                 <p>位於南投縣境北部的埔里，是臺灣的地理中心鎮，以甘泉、美酒、鮮花、佳人聞名，四面環山，是個典型的盆地小鎮，素有「山城」的美稱。</p>
@@ -59,6 +62,7 @@
 
         attractionsLink.addEventListener('click', function(event) {
             event.preventDefault();
+            console.log("十大景點按鈕點擊");
             attractionsLink.textContent = '十大景點';
             contentArea.innerHTML = `
         <h2>十大景點推薦</h2>
