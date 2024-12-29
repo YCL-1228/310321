@@ -34,11 +34,10 @@
     </footer>
 
     <script>
-   
+      
         document.addEventListener("DOMContentLoaded", () => {
-            const contentArea = document.getElementById('content-area');
+            const contentArea = document.getElementById('content-area'); 
 
-         
             const contentData = {
                 home: `
                     <h2>歡迎來到埔里小鎮</h2>
@@ -51,22 +50,25 @@
                     <p>埔里擁有豐富的族群歷史及自然資源，是旅遊、文化愛好者的天堂。每年吸引大量遊客來此欣賞美麗的風光、品味當地美食。</p>
                 `,
                 attractions: `
+                    <h2>十大景點</h2>
+                    <h3>1. 日月潭</h3>
+                    <p>擁有絕美的湖光山色，是臺灣最著名的旅遊景點之一。</p>
+                    <h3>2. 埔里酒廠</h3>
+                    <p>以甘泉釀造出清香甘醇的佳釀，吸引眾多旅客參觀。</p>
+                `
+            };
 
-                 <h2>十大景點</h2>
-                 <h3>1.日月町複合式廣場</h3>
-
-        
-             document.querySelector('nav').addEventListener('click', (event) => {
+            document.querySelector('nav').addEventListener('click', (event) => {
                 if (event.target.classList.contains('nav-link')) {
                     event.preventDefault(); 
-
-                    const target = event.target.dataset.target;
+                    
+                    const target = event.target.dataset.target; 
                     if (contentData[target]) {
                         contentArea.innerHTML = contentData[target]; 
                     }
                 }
             });
-        });      
+        });
     </script>
 
 </body>
