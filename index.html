@@ -26,18 +26,16 @@
         <section id="content-area">
             <h2>歡迎來到埔里小鎮</h2>
             <p>埔里小鎮是臺灣的地理中心，四面環山，擁有豐富的自然景觀和深厚的歷史文化。</p>
-            <img src="310321/圖/下載.jfif" alt="埔里鳥瞰圖" class="main-image">
+            <img src="images/下載.jfif" alt="埔里鳥瞰圖" class="main-image">
         </section>
     </main>
 
     <footer>
         <p>&copy; 2024 埔里小鎮. All rights reserved.</p>
     </footer>
-    <script src="about.html"></script>
-    <script src="attractions.html"></script>
-    <script src="food.html"></script>
+
     <script>
-       document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", () => {
             const contentArea = document.getElementById('content-area');
 
             document.querySelector('nav').addEventListener('click', (event) => {
@@ -45,21 +43,24 @@
                     event.preventDefault();
                     const target = event.target.dataset.target;
 
-                    if (target === "home") {
-                        loadHomeContent(contentArea);
-                    } else if (target === "about") {
-                        loadAboutContent(contentArea);
-                    } else if (target === "attractions") {
-                        loadAttractionsContent(contentArea);
-                    } else if (target === "food") {
-                        loadFoodContent(contentArea);
-                    } else {
-                        contentArea.innerHTML = `<p>。</p>`;
-                    }
+                    fetch(`${target}.html`)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error("Network response was not ok");
+                            }
+                            return response.text();
+                        })
+                        .then(data => {
+                            contentArea.innerHTML = data;
+                        })
+                        .catch(error => {
+                            contentArea.innerHTML = ``;
+                            console.error("Fetch error: ", error);
+                        });
                 }
             });
         });
     </script>
+
 </body>
-</html>
 </html>
