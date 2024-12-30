@@ -34,52 +34,35 @@
     </footer>
 
     <script>
-      
         document.addEventListener("DOMContentLoaded", () => {
-            const contentArea = document.getElementById('content-area'); 
-
-            const contentData = {
-                home: `
-                    <h2>歡迎來到埔里小鎮</h2>
-                    <p>埔里小鎮是臺灣的地理中心，四面環山，擁有豐富的自然景觀和深厚的歷史文化。</p>
-                    <img src="310321/圖/下載.jfif" alt="埔里鳥瞰圖" class="main-image">
-                `,
-                about: `
-                    <h2>關於埔里</h2>
-                    <p>位於南投縣境北部的埔里，是臺灣的地理中心鎮，以甘泉、美酒、鮮花、佳人聞名，四面環山，是個典型的盆地小鎮，素有「山城」的美稱。</p>
-                    <p>埔里擁有豐富的族群歷史及自然資源，是旅遊、文化愛好者的天堂。每年吸引大量遊客來此欣賞美麗的風光、品味當地美食。</p>
-                    <h3>縣長</h3> <p>許淑華</p>
-                `,
-                attractions: `
-                    <h2>十大景點</h2>
-                    <h3>1. 日月潭</h3>
-                    <p>擁有絕美的湖光山色，是臺灣最著名的旅遊景點之一。</p>
-                    <h3>2. 埔里酒廠</h3>
-                    <p>以甘泉釀造出清香甘醇的佳釀，吸引眾多旅客參觀。</p>
-                    <h3>3. 紙教堂</h3>
-                    <p>具現代感的紙教堂，用58根紙管支撐建築本體，構成充滿幾何感的長方形迴廊，微微透光的天幕營造柔和又神聖的氛圍。</p>
-                    <h3>4. 妮娜巧克力夢想城堡</h3>
-                    <p>Cona's妮娜巧克力裡頭可參觀巧克力製作過程、巧克力DIY，是親子情侶旅遊必來中部景點。</p>
-                    <h3>5. 木生昆蟲博物館</h3>
-                    <p>木生昆蟲博物館緊鄰於牛耳藝術渡假村，館內珍藏了許多世界各地著名的蝴蝶和昆蟲標本，目前為世界上私人收藏最豐富的昆蟲博物館。</p>
-                    <h3>6. 日月町複合式廣場</h3>
-                    <p>精英開發歷經三年精心打造，最新力作即將推出一座全新的生活式體驗商場，將座落於前往日月潭的必經之地，愛蘭交流道旁的 日月町複合式商場。</p>
-                    <h3>7. 埔里地母廟</h3>
-                    <p>南投地母廟，位於埔里鎮，因地處金鷹山上，最大亮點就是登上最高的乾元殿，可以欣賞華麗的綠琉璃瓦屋簷與遠山、藍天、白雲、埔里市景的美景，氣勢磅礡的韓風廟宇風情加上一望無際的視野，有君臨天下之感 ，成為人氣打卡地標。</p>
-                    <h3>8. 鳥居Torii喫茶食堂</h3>
-                    <p>南投埔里知名的旅遊景點，有提供浴衣體驗、用餐服務。大正二年(1913)年時建造，當時主要是糖廠員工採糖前祈求上山一切平安，並作為節日時慶祝物產豐收時敬天之用。</p>
-
-
-                `
-            };
+            const contentArea = document.getElementById('content-area');
 
             document.querySelector('nav').addEventListener('click', (event) => {
                 if (event.target.classList.contains('nav-link')) {
-                    event.preventDefault(); 
-                    
-                    const target = event.target.dataset.target; 
-                    if (contentData[target]) {
-                        contentArea.innerHTML = contentData[target]; 
+                    event.preventDefault();
+                    const target = event.target.dataset.target;
+
+                    if (target === "home") {
+                        contentArea.innerHTML = `
+                            <h2>歡迎來到埔里小鎮</h2>
+                            <p>埔里小鎮是臺灣的地理中心，四面環山，擁有豐富的自然景觀和深厚的歷史文化。</p>
+                            <img src="310321/圖/下載.jfif" alt="埔里鳥瞰圖" class="main-image">
+                        `;
+                         } else {
+                        fetch(`${target}.html`)
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error("Network response was not ok");
+                                }
+                                return response.text();
+                            })
+                            .then(data => {
+                                contentArea.innerHTML = data;
+                            })
+                            .catch(error => {
+                                contentArea.innerHTML = `<p>ㄥ</p>`;
+                                console.error("Fetch error: ", error);
+                            });
                     }
                 }
             });
