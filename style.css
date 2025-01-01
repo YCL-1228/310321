@@ -42,12 +42,3 @@ p {    font-size: 1.1em;
        margin-bottom: 1.5em;
        line-height: 1.8;}
 
-.landscape-image { width: 100%; 
-                   max-width: 600px; 
-                   height: 400px; 
-                   object-fit: cover; 
-                   margin: 10px auto; 
-                   display: block;
-                   border: 1px solid #ddd; 
-                   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
-
