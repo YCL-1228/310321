@@ -28,10 +28,10 @@ nav { background-image: url("310321/圖/里.png");
   justify-content: center;}
 
 nav a { text-decoration: none;
-       color: #333;
-       margin: 0 1em;
-       font-size: 1.1em;
-       transition: color 0.3s;}
+  color: #333;
+  margin: 0 1em;
+  font-size: 1.1em;
+  transition: color 0.3s;}
 
 nav a:hover {color: #6a5acd;}
 
