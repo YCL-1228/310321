@@ -1,15 +1,15 @@
-{margin: 0;
- padding: 0;
- box-sizing: border-box;}
+     { margin: 0;
+       padding: 0;
+       box-sizing: border-box;}
 
-body {font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color:#C4E1FF;
-      color: #333;
-      margin: 0;
-      padding: 0;}
+body { font-family: Arial, sans-serif;
+       line-height: 1.6;
+       background-color:#C4E1FF;
+       color: #333;
+       margin: 0;
+       padding: 0;}
 
-header {background-image: url("310321/圖/街道圖.png"); 
+header { background-image: url("310321/圖/街道圖.png"); 
         background-size: cover; 
         background-position: center; 
         color: #fff;
@@ -17,12 +17,10 @@ header {background-image: url("310321/圖/街道圖.png");
         text-align: center;
         font-size: 2em;}
 
-nav {  background-color: #ddd;
-       padding: 1em 0;
-       display: flex;
-       justify-content: center;}
+nav {  background-image: url("310321/圖/里.png);
+      }
 
-nav a {text-decoration: none;
+nav a { text-decoration: none;
        color: #333;
        margin: 0 1em;
        font-size: 1.1em;
