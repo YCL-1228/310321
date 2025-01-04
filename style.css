@@ -17,12 +17,10 @@ header { background-image: url("310321/圖/街道圖.png");
         text-align: center;
         font-size: 2em;}
 
-nav {  background-image: url("310321/圖/里.png);
-        background-size: cover; 
-        background-position: center; 
-        padding: 1.5em 0;
-        text-align: center;
-        font-size: 2em; }
+nav {  bbackground: #ddd;
+    color: #fff;
+    padding: 10px;
+    text-align: center;}
 
 nav a { text-decoration: none;
        color: #333;
