@@ -18,7 +18,11 @@ header { background-image: url("310321/圖/街道圖.png");
         font-size: 2em;}
 
 nav {  background-image: url("310321/圖/里.png);
-      }
+        background-size: cover; 
+        background-position: center; 
+        padding: 1.5em 0;
+        text-align: center;
+        font-size: 2em; }
 
 nav a { text-decoration: none;
        color: #333;
