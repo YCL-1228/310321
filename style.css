@@ -25,7 +25,8 @@ nav { background-image: url("310321/圖/里.png");
   display: flex;
   text-align: center;
   gap: 1.2em; 
-  align-items: center;}
+  align-items: center;
+  font-size: 15px}
 
 nav a { text-decoration: none;
   color: #333;
