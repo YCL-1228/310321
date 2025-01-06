@@ -21,7 +21,7 @@ nav { background-image: url("310321/圖/里.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   text-align: center;
   gap: 1.2em; 
