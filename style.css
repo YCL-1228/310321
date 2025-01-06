@@ -46,10 +46,13 @@ main { padding: 2em;
 h2 {   font-size: 30px;
        margin-bottom: 18px;}
 
-h3 {   font-size: 25px;
+h3 {   font-size: 27px;
        margin-bottom: 10px;}
 
-p {    font-size: 1.1em;
+h4 { font-size: 22px;
+     font-weight: bold;}
+
+p {    font-size: 16px;
        margin-bottom: 1.5em;
        line-height: 1.8;}
 
