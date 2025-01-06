@@ -21,12 +21,12 @@ nav { background-image: url("310321/圖/里.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: 15px;
+  padding: 20px;
   display: flex;
   text-align: center;
   gap: 1.2em; 
   align-items: center;
-  font-size: 15px
+  font-size: 20px
   justify-content: center;}
 
 nav a { text-decoration: none;
